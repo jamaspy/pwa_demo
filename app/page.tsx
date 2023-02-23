@@ -1,4 +1,11 @@
-import { HeroSection, MoreThan, Navbar, ProviderProfiles } from "@/components";
+import {
+  HeroSection,
+  MoreThan,
+  Navbar,
+  PeopleNumbers,
+  ProviderProfiles,
+  SimpleSteps,
+} from "@/components";
 
 import React from "react";
 export default function Home() {
@@ -8,6 +15,8 @@ export default function Home() {
       <HeroSection />
       <ProviderProfiles />
       <MoreThan />
+      <PeopleNumbers />
+      <SimpleSteps />
     </main>
   );
 }

@@ -8,11 +8,9 @@ import image3 from "@/public/morethan/moreThan3.jpeg";
 import Image from "next/image";
 import React, { Fragment } from "react";
 export const MoreThan = () => {
-  const [selectedTab, setSelectedTab] = React.useState<number | undefined>(
-    undefined
-  );
+  const [selectedTab, setSelectedTab] = React.useState<number>(0);
 
-  const renderImage = (index: number | undefined) => {
+  const renderImage = (index: number) => {
     switch (index) {
       case 0:
         return (

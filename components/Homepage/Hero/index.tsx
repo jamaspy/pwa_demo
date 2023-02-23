@@ -16,7 +16,7 @@ export const HeroSection = () => {
           width={300}
           className="absolute top-12 left-6 opacity-50"
         />
-        <div className="max-w-xl">
+        <div className="max-w-xl z-10">
           <p className="font-bold text-6xl leading-snug mb-8">
             <span className="bg-purple-600 text-white">Connect</span> with your
             ideal provider, the way you want to.

@@ -5,15 +5,16 @@ import React from "react";
 export const Navbar = () => {
   return (
     <nav className="p-4 bg-white flex flex-row justify-between items-center">
-      <Image src={Logo} alt="heyhubble logo" width={200} />
-      <div className="">
-        <ul className="flex flex-row gap-8">
-          <li className="text-gray-500">About</li>
-          <li className="text-gray-500">How it works</li>
-          <li className="text-gray-500">Pricing</li>
-        </ul>
-      </div>
-      <div className="flex flex-col md:flex-row">
+      <Image src={Logo} alt="heyhubble logo" width={100} />
+
+      <ul className="hidden lg:flex flex-row gap-8">
+        <li className="text-slate-500">Looking for Providers</li>
+        <li className="text-slate-500">Provider Services</li>
+        <li className="text-slate-500">NDIS Help</li>
+        <li className="text-slate-500">Contact</li>
+      </ul>
+
+      <div className="hidden flex-col md:flex-row lg:flex">
         <Button
           label="Request a service"
           variant="is-secondary"

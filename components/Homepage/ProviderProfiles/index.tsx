@@ -5,7 +5,7 @@ import React from "react";
 export const ProviderProfiles = () => {
   return (
     <section className="bg-purple-100 w-full">
-      <div className="flex flex-col md:flex-row items-center justify-center gap-8 p-8">
+      <div className="grid-cols-4 grid gap-8 p-8">
         {providerProfiles.map((profile) => (
           <ProviderCard
             key={profile.providerName}
