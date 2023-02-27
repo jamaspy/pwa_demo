@@ -4,8 +4,11 @@ import React from "react";
 
 export const ProviderProfiles = () => {
   return (
-    <section className="bg-purple-100 w-full">
-      <div className="grid-cols-4 grid gap-8 p-8">
+    <section
+      className="bg-purple-100 w-full p-40"
+      style={{ clipPath: "polygon(0 0%, 100% 0, 100% 88%, 0 100%)" }}
+    >
+      <div className="grid-cols-1 md:grid-cols-2 lg:grid-cols-4 grid gap-8 p-8">
         {providerProfiles.map((profile) => (
           <ProviderCard
             key={profile.providerName}

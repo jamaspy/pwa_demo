@@ -8,12 +8,12 @@ import React from "react";
 
 export const HeroSection = () => {
   return (
-    <section className="flex flex-col-reverse lg:flex-row min-h-screen w-full">
-      <div className="flex-1 p-24 flex flex-col items-center justify-center bg-[#FFF9F0] relative">
+    <section className="flex flex-col-reverse lg:flex-row  w-full bg-[#FFF9F0]">
+      <div className="flex-1 p-24 flex flex-col items-center justify-center  relative">
         <Image
           src={topSVG}
           alt="man on laptop"
-          width={300}
+          width={400}
           className="absolute top-12 left-6 opacity-50"
         />
         <div className="max-w-xl z-10">
@@ -33,12 +33,12 @@ export const HeroSection = () => {
         <Image
           src={bottomSVG}
           alt="man on laptop"
-          width={300}
-          className="absolute bottom-24 right-6 opacity-50"
+          width={400}
+          className="absolute bottom-24 right-0 opacity-50"
         />
       </div>
-      <div className="from-purple-800 to-purple-100 relative bg-gradient-to-b flex-1">
-        <Image src={people} fill alt="man on laptop" />
+      <div className="flex flex-row justify-end bg-gradient-to-b from-purple-600 to-purple-100 w-full flex-1">
+        <Image src={people} alt="man on laptop" className="w-full" />
       </div>
     </section>
   );

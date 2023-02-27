@@ -6,7 +6,7 @@ interface TabCardProps {
   heading: string;
   description: string;
   selectedTab: number | undefined;
-  setSelectedTab: React.Dispatch<React.SetStateAction<number | undefined>>;
+  setSelectedTab: React.Dispatch<React.SetStateAction<number>>;
 }
 export const TabCard = ({
   heading,

@@ -1,4 +1,4 @@
-import { Navbar } from "@/components";
+import { Footer, Navbar } from "@/components";
 import { DM_Sans } from "@next/font/google";
 import "./globals.css";
 const inter = DM_Sans({
@@ -19,7 +19,11 @@ export default function RootLayout({
       */}
       <head />
       <body className={inter.className}>
-        <div className="">{children}</div>
+        <div className="">
+          <Navbar />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html>
   );

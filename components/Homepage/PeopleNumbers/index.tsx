@@ -3,12 +3,15 @@ import { GiCuckooClock } from "react-icons/gi";
 import { TbBuildingSkyscraper, TbMoodSmile } from "react-icons/tb";
 export const PeopleNumbers = () => {
   return (
-    <div className="w-full bg-purple-100">
-      <div className="container mx-auto flex flex-col justify-center items-center p-8">
+    <div
+      className="w-full bg-purple-100"
+      style={{ clipPath: "polygon(0 18%, 100% 0, 100% 88%, 0 100%)" }}
+    >
+      <div className="container mx-auto flex flex-col justify-center items-center py-60">
         <p className="font-bold text-5xl leading-snug mb-8 text-slate-800">
           Real people connecting you with real people
         </p>
-        <div className="flex flex-row gap-4">
+        <div className="flex flex-col lg:flex-row gap-4">
           <div className="bg-white rounded-2xl flex items-center justify-between flex-col p-4 flex-1 shadow">
             <TbBuildingSkyscraper className="text-purple-600 text-5xl text-center mb-4" />
             <p className="font-bold text-xl text-purple-600">352 suburbs</p>

@@ -25,7 +25,7 @@ export const ProviderCard = ({
   tags = [],
 }: any) => {
   return (
-    <div className="flex flex-col justify-between rounded-xl bg-white p-8 shadow-md">
+    <div className="flex flex-col items-center justify-between rounded-xl bg-white p-8 shadow-md">
       <div className="">
         <div className="relative">
           <Image

@@ -6,7 +6,11 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      backgroundImage: {
+        wave: "url('/dark_wave.svg')",
+      },
+    },
   },
   plugins: [],
 };
