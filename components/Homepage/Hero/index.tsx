@@ -8,7 +8,7 @@ import React from "react";
 
 export const HeroSection = () => {
   return (
-    <section className="flex flex-col-reverse lg:flex-row  w-full bg-[#FFF9F0]">
+    <section className="flex flex-col-reverse lg:flex-row min-h-screen w-full bg-[#FFF9F0]">
       <div className="flex-1 p-24 flex flex-col items-center justify-center  relative">
         <Image
           src={topSVG}

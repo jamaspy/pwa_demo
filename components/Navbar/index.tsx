@@ -46,10 +46,16 @@ export const Navbar = () => {
             <span>NDIS Help</span>
           </button>
           <div className="absolute z-10 hidden bg-grey-200 group-hover:block">
-            <div className="px-2 pt-2 pb-4 bg-white shadow-lg">
-              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                <p>dropdown content here</p>
-              </div>
+            <div className="flex flex-col justify-between p-4 bg-white shadow-lg">
+              <Link href="/blog" className="hover:text-purple-600 my-2">
+                Blog
+              </Link>
+              <Link href="/participants" className="hover:text-purple-600 my-2">
+                Support Coordinators
+              </Link>
+              <Link href="/participants" className="hover:text-purple-600 my-2">
+                Get Started
+              </Link>
             </div>
           </div>
         </div>
@@ -73,8 +79,12 @@ export const Navbar = () => {
           variant="is-secondary"
           className="mr-4"
         />
-        <Button label="Login" variant="is-secondary" className="mr-4" />
-        <Button label="Signup" variant="is-primary" className="" />
+        <Link href="https://app.heyhubble.com.au/landing/login">
+          <Button label="Login" variant="is-secondary" className="mr-4" />
+        </Link>
+        <Link href="https://app.heyhubble.com.au/landing/signup?_gl=1*14kdg9z*_ga*MTg3MzExMzE1NC4xNjc1Mzk2NTk0*_ga_M3815N40GV*MTY3NzU2NTA2OS4xNS4xLjE2Nzc1NjY5NjguMC4wLjA.">
+          <Button label="Signup" variant="is-primary" className="" />
+        </Link>
       </div>
     </nav>
   );
