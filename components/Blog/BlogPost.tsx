@@ -6,7 +6,7 @@ import { FiChevronsRight } from "react-icons/fi";
 const BlogPost = ({ post }: { post: Post }) => {
   return (
     <ClientSideRoute key={post._id} route={`/blog/${post.slug?.current}`}>
-      <div className="bg-[#FEF9EF] flex-1 cursor-pointer hover:shadow-lg transition-shadow duration-200 border border-purple-600 rounded-lg shadow p-8 flex flex-col justify-between">
+      <div className="bg-[#FEF9EF] flex-1 cursor-pointer hover:shadow-lg transition-shadow duration-200 border border-purple-600 rounded-tl-3xl rounded-br-3xl shadow p-8 flex flex-col justify-between">
         <div className="">
           <Image
             src={urlFor(post.mainImage).url()}
