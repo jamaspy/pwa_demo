@@ -1,7 +1,7 @@
 import { visionTool } from "@sanity/vision";
 import { defineConfig } from "sanity";
 import { deskTool } from "sanity/desk";
-import { SanityLayout, SanityLogo, SanityNavbar } from "./components";
+import { SanityLogo, SanityNavbar } from "./components";
 import { myTheme } from "./sanity.theme";
 import { schemaTypes } from "./schemas";
 
