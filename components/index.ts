@@ -2,6 +2,7 @@
 export * from "./Blog";
 export * from "./Button";
 export * from "./Cards";
+export * from "./ClientSideRoute";
 export * from "./Footer";
 export * from "./Homepage";
 export * from "./Navbar";

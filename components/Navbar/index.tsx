@@ -34,10 +34,13 @@ export const Navbar = () => {
             <span>Provider Services</span>
           </button>
           <div className="absolute z-10 hidden bg-grey-200 group-hover:block">
-            <div className="px-2 pt-2 pb-4 bg-white shadow-lg">
-              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                <p>dropdown content here</p>
-              </div>
+            <div className="flex flex-col justify-between p-4 bg-white shadow-lg">
+              <Link href="/participants" className="hover:text-purple-600 my-2">
+                Providers
+              </Link>
+              <Link href="/participants" className="hover:text-purple-600 my-2">
+                Get Started
+              </Link>
             </div>
           </div>
         </div>
@@ -51,25 +54,20 @@ export const Navbar = () => {
                 Blog
               </Link>
               <Link href="/participants" className="hover:text-purple-600 my-2">
-                Support Coordinators
+                Participant Resources
               </Link>
               <Link href="/participants" className="hover:text-purple-600 my-2">
-                Get Started
+                Provider Resources
               </Link>
             </div>
           </div>
         </div>
         <div className="relative group">
-          <button className="flex flex-row items-center w-full px-4 py-4 mt-2 text-base font-bold text-left  bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 focus:outline-none ">
-            <span>Contact</span>
-          </button>
-          <div className="absolute z-10 hidden bg-grey-200 group-hover:block  transition-all duration-200 ease-in-out">
-            <div className="px-2 pt-2 pb-4 bg-white shadow-lg">
-              <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
-                <p>dropdown content here</p>
-              </div>
-            </div>
-          </div>
+          <Link href="/contact">
+            <button className="flex flex-row items-center w-full px-4 py-4 mt-2 text-base font-bold text-left  bg-transparent rounded-lg md:w-auto md:inline md:mt-0 md:ml-4 focus:outline-none ">
+              <span>Contact</span>
+            </button>
+          </Link>
         </div>
       </div>
 
