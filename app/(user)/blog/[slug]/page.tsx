@@ -25,7 +25,7 @@ const BlogPost = async ({ params: { slug } }: BlogPostProps) => {
   const post = await sanityClient.fetch(query, { slug });
   console.log(post.author.bio);
   return (
-    <article>
+    <article className="px-4">
       <section className="mb-12">
         <Image
           src={urlFor(post.mainImage).url()}
@@ -52,14 +52,14 @@ const BlogPost = async ({ params: { slug } }: BlogPostProps) => {
             href="/blog"
             className="text-purple-600 hover:text-purple-800 flex flex-row items-center mb-8"
           >
-            <FiChevronsLeft className="w-6 h-6 ml-2" /> Back to All Articles
+            <FiChevronsLeft className="w-6 h-6" /> Back to All Articles
           </Link>
           <PortableText value={post.body} components={RichTextComponents} />
           <Link
             href="/blog"
             className="text-purple-600 hover:text-purple-800 flex flex-row items-center mt-8"
           >
-            <FiChevronsLeft className="w-6 h-6 ml-2" /> Back to All Articles
+            <FiChevronsLeft className="w-6 h-6" /> Back to All Articles
           </Link>
         </div>
       </section>
@@ -68,7 +68,7 @@ const BlogPost = async ({ params: { slug } }: BlogPostProps) => {
           <h2 className="text-2xl font-bold mb-4">About the Author</h2>
           <div className="flex flex-col lg:flex-row items-center lg:items-start lg:justify-between">
             <div className="flex flex-row items-center">
-              <div className=" w-24 h-24 rounded-lg overflow-hidden">
+              <div className="w-24 h-24 rounded-lg overflow-hidden hidden md:flex">
                 <Image
                   src={urlFor(post.author.image).url()}
                   width={100}
