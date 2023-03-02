@@ -7,6 +7,8 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import { FiChevronsLeft } from "react-icons/fi";
+import {PortableTextBlock} from "@portabletext/types";
+import placeholder from "@/public/placeholder.webp";
 interface BlogPostProps {
   params: {
     slug: string;
@@ -23,18 +25,17 @@ const BlogPost = async ({ params: { slug } }: BlogPostProps) => {
  `;
 
   const post = await sanityClient.fetch(query, { slug });
-  console.log(post.author.bio);
   return (
     <article className="px-4">
       <section className="mb-12">
         <Image
-          src={urlFor(post.mainImage).url()}
+          src={urlFor(post?.mainImage).url()}
           width={600}
           height={1000}
-          alt={post.title}
+          alt={post?.title}
           className="mx-auto"
         />
-        <h1 className="text-center text-3xl font-bold">{post.title}</h1>
+        <h1 className="text-center text-3xl font-bold">{post?.title}</h1>
 
         <p className="text-xs text-slate-600 text-center">
           {`Published by ${post?.author?.name}: ${new Date(
@@ -54,7 +55,7 @@ const BlogPost = async ({ params: { slug } }: BlogPostProps) => {
           >
             <FiChevronsLeft className="w-6 h-6" /> Back to All Articles
           </Link>
-          <PortableText value={post.body} components={RichTextComponents} />
+          <PortableText value={post?.body} components={RichTextComponents} />
           <Link
             href="/blog"
             className="text-purple-600 hover:text-purple-800 flex flex-row items-center mt-8"
@@ -70,16 +71,16 @@ const BlogPost = async ({ params: { slug } }: BlogPostProps) => {
             <div className="flex flex-row items-center">
               <div className="w-24 h-24 rounded-lg overflow-hidden hidden md:flex">
                 <Image
-                  src={urlFor(post.author.image).url()}
+                  src={post?.author?.image && urlFor(post?.author?.image).url() || placeholder}
                   width={100}
                   height={100}
-                  alt={post.author.name}
+                  alt={post?.author?.name}
                 />
               </div>
               <div className="flex flex-col ml-4">
-                <h3 className="text-xl font-bold">{post.author.name}</h3>
+                <h3 className="text-xl font-bold">{post?.author?.name}</h3>
                 <PortableText
-                  value={post.author.bio}
+                  value={post?.author?.bio as PortableTextBlock[] | PortableTextBlock}
                   components={RichTextComponents}
                 />
               </div>

@@ -5,7 +5,13 @@ import Link from "next/link";
 import { useState } from "react";
 import { CgMenuGridO } from "react-icons/cg";
 import { MdOutlineClose } from "react-icons/md";
-const ListItemLink = ({ href, label, closeMenu }) => {
+
+interface LinkListItemProps {
+    href: string;
+    label: string;
+    closeMenu: (value: boolean) => void;
+}
+const ListItemLink = ({ href, label, closeMenu }:LinkListItemProps) => {
   return (
     <li className="hover:text-purple-600 my-2">
       <Link href={href} onClick={() => closeMenu(false)}>
