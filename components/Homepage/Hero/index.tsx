@@ -14,7 +14,7 @@ export const HeroSection = () => {
           src={topSVG}
           alt="man on laptop"
           width={400}
-          className="absolute top-12 left-6 opacity-50"
+          className="absolute top-12 left-6 opacity-20"
         />
         <div className="max-w-xl z-10">
           <p className="font-bold text-6xl leading-snug mb-8">
@@ -34,7 +34,7 @@ export const HeroSection = () => {
           src={bottomSVG}
           alt="man on laptop"
           width={400}
-          className="absolute bottom-24 right-0 opacity-50"
+          className="absolute bottom-24 right-0 opacity-20"
         />
       </div>
       <div className="flex flex-row justify-end bg-gradient-to-b from-purple-600 to-purple-100 w-full flex-1">

@@ -56,10 +56,8 @@ export const MoreThan = () => {
         <div className="max-w-xl">
           <p className="font-bold text-6xl leading-snug mb-8">
             We&lsquo;re more than a{" "}
-            <span className="bg-purple-600 text-white rounded-tl-3xl rounded-br-3xl">
-              provider finder
-            </span>{" "}
-            or search directory.
+            <span className="bg-purple-600 text-white">provider finder</span> or
+            search directory.
           </p>
         </div>
         <div className="flex flex-row gap-16">

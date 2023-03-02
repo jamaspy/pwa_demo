@@ -23,7 +23,7 @@ export const TabCard = ({
           "border-l-purple-600 shadow-md ": selectedTab === index,
           "border-l-white opacity-50": selectedTab !== index,
         },
-        "bg-white rounded-2xl p-8 my-8 border-l-8 transition-all duration-300 ease-in-out cursor-pointer "
+        "bg-white  rounded-tl-3xl rounded-br-3xl p-8 my-8 border-l-8 transition-all duration-300 ease-in-out cursor-pointer "
       )}
     >
       <p className="text-3xl font-bold mb-4">{heading}</p>

@@ -1,7 +1,6 @@
 import {
   HeroSection,
   MoreThan,
-  Navbar,
   PeopleNumbers,
   Pricing,
   ProviderProfiles,
