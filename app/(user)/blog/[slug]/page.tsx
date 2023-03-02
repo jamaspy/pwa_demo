@@ -15,6 +15,20 @@ interface BlogPostProps {
   };
 }
 
+export async function generateStaticParams() {
+  const query = groq`
+  *[_type == "post"]{
+    slug
+  }
+ `;
+
+  const slugs:Post[] = await sanityClient.fetch(query);
+  const slugRoutes = slugs.map((slug) => slug.slug.current);
+
+  return slugRoutes.map((slug) => ({ slug }));
+
+}
+
 const BlogPost = async ({ params: { slug } }: BlogPostProps) => {
   const query = groq`
   *[_type == "post" && slug.current == $slug][0]{
