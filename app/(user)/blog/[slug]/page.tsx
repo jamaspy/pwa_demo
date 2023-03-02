@@ -29,7 +29,7 @@ const BlogPost = async ({ params: { slug } }: BlogPostProps) => {
     <article className="px-4">
       <section className="mb-12">
         <Image
-          src={urlFor(post?.mainImage).url()}
+          src={post?.mainImage && urlFor(post?.mainImage).url() || placeholder}
           width={600}
           height={1000}
           alt={post?.title}
@@ -39,7 +39,7 @@ const BlogPost = async ({ params: { slug } }: BlogPostProps) => {
 
         <p className="text-xs text-slate-600 text-center">
           {`Published by ${post?.author?.name}: ${new Date(
-            post._createdAt
+            post?._createdAt
           ).toLocaleDateString("en-US", {
             day: "numeric",
             month: "long",
