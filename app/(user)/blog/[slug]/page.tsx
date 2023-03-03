@@ -15,6 +15,8 @@ interface BlogPostProps {
   };
 }
 
+// export const revalidate = 3600; // revalidate page every 60 seconds
+
 export async function generateStaticParams() {
   const query = groq`
   *[_type == "post"]{
