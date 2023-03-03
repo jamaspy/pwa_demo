@@ -8,8 +8,8 @@ import { BiBadgeCheck } from "react-icons/bi";
 const Participants = () => {
   return (
     <div>
-      <section className="flex flex-col-reverse lg:flex-row min-h-screen w-full bg-[#FFF9F0]">
-        <div className="flex-1 p-12 flex flex-col items-center justify-center relative">
+      <section className="flex flex-col-reverse lg:flex-row  w-full bg-[#FFF9F0]">
+        <div className="flex-1 py-24 px-4 flex flex-col items-center justify-center relative">
           <div className="max-w-lg z-10 ">
             <p className="font-bold text-6xl leading-snug mb-8">
               Find exactly{" "}
@@ -38,10 +38,10 @@ const Participants = () => {
           />
         </div>
       </section>
-      <section>
+      <section className='py-24'>
         <SimpleSteps />
       </section>
-      <section className="flex flex-col-reverse lg:flex-row min-h-screen w-full bg-purple-100">
+      <section className="flex flex-col-reverse lg:flex-row w-full bg-purple-100">
         <div className="bg-purple-100 w-full flex-1 relative flex items-center justify-center">
           <Image
             src={Smiles}
@@ -51,7 +51,7 @@ const Participants = () => {
             className="rounded-xl shadow"
           />
         </div>
-        <div className="flex-1 p-12 flex flex-col items-center justify-center relative">
+        <div className="flex-1 py-24 flex flex-col items-center justify-center relative">
           <div className="max-w-lg z-10 ">
             <p className="font-bold text-4xl leading-snug mb-8">
               Why you’ll love using HeyHubble.
@@ -71,7 +71,7 @@ const Participants = () => {
           </div>
         </div>
       </section>
-      <section className="flex flex-col-reverse lg:flex-row min-h-screen w-full bg-[#FFF9F0]">
+      <section className="flex flex-col-reverse lg:flex-row  w-full bg-[#FFF9F0]">
         <div className="flex-1 p-12 flex flex-col items-center justify-center relative ">
           <div className="max-w-lg z-10 ">
             <p className="font-bold text-4xl leading-snug mb-8">
@@ -118,7 +118,7 @@ const Participants = () => {
             </ul>
           </div>
         </div>
-        <div className="bg-[#FFF9F0] w-full flex-1 relative flex items-center justify-center">
+        <div className="bg-[#FFF9F0] w-full flex-1 py-24 relative flex items-center justify-center">
           <Image
             src={GirlPlaying}
             alt="man on laptop"
