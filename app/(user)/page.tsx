@@ -11,14 +11,8 @@ import {
 import React from "react";
 export default function Home() {
   return (
-    <main className="bg-[#FFF9F0]">
-      <HeroSection />
-      {/* <ProviderProfiles /> */}
-      <MoreThan />
-      {/* <PeopleNumbers />
-      <SimpleSteps />
-      <Testimonials />
-      <Pricing /> */}
-    </main>
+    <section className="flex h-full items-center justify-center bg-[#FFF9F0]">
+      <p className="text-xl mt-24">This is the home screen</p>
+    </section>
   );
 }
