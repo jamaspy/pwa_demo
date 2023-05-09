@@ -21,12 +21,11 @@ export const Button = ({
       className={classNames(
         className,
         {
-          "bg-purple-600  text-white": variant === "is-primary" && !disabled,
-          "border-purple-600 border text-purple-600":
+          "bg-tea-green  text-gunmetal": variant === "is-primary" && !disabled,
+          "border-tea-green border text-tea-green":
             variant === "is-secondary" && !disabled,
-          "bg-purple-100 text-purple-600 cursor-not-allowed": disabled,
-          "bg-purple-100 text-gray-600 cursor-not-allowed":
-            !isValid || isFetching,
+          "bg-rose text-tea-green cursor-not-allowed": disabled,
+          "bg-rose text-gray-600 cursor-not-allowed": !isValid || isFetching,
         },
         "rounded-full px-6 py-2 text-lg"
       )}

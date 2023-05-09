@@ -4,6 +4,7 @@ import { moreThanProvider } from "@/content/more_than_provider";
 import image1 from "@/public/morethan/moreThan1.jpeg";
 import image2 from "@/public/morethan/moreThan2.jpeg";
 import image3 from "@/public/morethan/moreThan3.jpeg";
+import tableLadies from "@/public/tableLadies.png";
 
 import Image from "next/image";
 import React, { Fragment } from "react";
@@ -15,7 +16,7 @@ export const MoreThan = () => {
       case 0:
         return (
           <Image
-            src={image1}
+            src={tableLadies}
             alt="option1"
             className="rounded-lg"
             width={800}
@@ -53,28 +54,16 @@ export const MoreThan = () => {
   return (
     <section className="bg-[#FFF9F0]">
       <div className=" container mx-auto p-8">
-        <div className="max-w-xl">
-          <p className="font-bold text-6xl leading-snug mb-8">
-            We&lsquo;re more than a{" "}
-            <span className="bg-purple-600 text-white">provider finder</span> or
-            search directory.
-          </p>
-        </div>
+        <div className="max-w-xl"></div>
         <div className="flex flex-row gap-16">
           <div className="flex-1 flex items-center justify-center">
             {renderImage(selectedTab)}
           </div>
           <div className="flex-1">
-            {moreThanProvider.map((item, index) => (
-              <TabCard
-                key={index}
-                heading={item.heading}
-                description={item.description}
-                index={index}
-                setSelectedTab={setSelectedTab}
-                selectedTab={selectedTab}
-              />
-            ))}
+            <p className="font-bold text-6xl leading-snug mb-8">
+              Your partner for diversity, growth, and female leadership in{" "}
+              <span className="bg-tea-green text-white">tech recruitment</span>
+            </p>
           </div>
         </div>
       </div>

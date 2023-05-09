@@ -13,12 +13,12 @@ export default function Home() {
   return (
     <main className="bg-[#FFF9F0]">
       <HeroSection />
-      <ProviderProfiles />
+      {/* <ProviderProfiles /> */}
       <MoreThan />
-      <PeopleNumbers />
+      {/* <PeopleNumbers />
       <SimpleSteps />
       <Testimonials />
-      <Pricing />
+      <Pricing /> */}
     </main>
   );
 }

@@ -9,46 +9,53 @@ import React from "react";
 import { FiChevronsLeft } from "react-icons/fi";
 import { PortableTextBlock } from "@portabletext/types";
 import placeholder from "@/public/placeholder.webp";
-import { ClientSideRoute } from "@/components";
 interface BlogPostProps {
   params: {
-    slug: string;
+    categoryArticleSlug: string;
   };
 }
 
 // export const revalidate = 3600; // revalidate page every 60 seconds
-
-export async function generateStaticParams() {
-  const query = groq`
-  *[_type == "post"]{
-    slug
+const queryRoutes = groq`
+  *[_type == "categoryArticle"]{
+    slug,
+    post->{
+      slug
+      }
   }
  `;
 
-  const slugs: Post[] = await sanityClient.fetch(query);
-  const slugRoutes = slugs.map((slug) => slug.slug.current);
+export async function generateStaticParams() {
+  const slugs: Post[] = await sanityClient.fetch(queryRoutes);
+  const slugRoutes = slugs.map((slug) => {
+    return {
+      categoryArticleSlug: slug.slug.current,
+      slug: slug.post.slug.current,
+    };
+  });
 
-  return slugRoutes.map((slug) => ({ slug }));
+  return slugRoutes.map((s) => ({
+    categoryArticleSlug: s.categoryArticleSlug,
+    slug: s.slug,
+  }));
 }
 
-const BlogPost = async ({ params: { slug } }: BlogPostProps) => {
-  const query = groq`
-  *[_type == "post" && slug.current == $slug][0]{
+const BlogPost = async ({ params: { categoryArticleSlug } }: BlogPostProps) => {
+  const queryArticle = groq`
+  *[_type == "categoryArticle" && slug.current == $categoryArticleSlug][0]{
     ...,
      author->,
-     categoryArticles[]->{
-        ...,
+     post->{
         "slug": slug.current
-     },
+      },
     "categories": categories[]->title
   }
  `;
 
-  const post = await sanityClient.fetch(query, { slug });
+  const post = await sanityClient.fetch(queryArticle, { categoryArticleSlug });
 
   return (
     <article className="px-4">
-      {/* <pre>{JSON.stringify(post, null, 2)}</pre> */}
       <section className="mb-12">
         <Image
           src={
@@ -74,14 +81,14 @@ const BlogPost = async ({ params: { slug } }: BlogPostProps) => {
       <section>
         <div className="container mx-auto">
           <Link
-            href="/blog"
+            href={`/blog/${post.post.slug}`}
             className="text-purple-600 hover:text-purple-800 flex flex-row items-center mb-8"
           >
             <FiChevronsLeft className="w-6 h-6" /> Back to All Articles
           </Link>
           <PortableText value={post?.body} components={RichTextComponents} />
           <Link
-            href="/blog"
+            href={`/blog/${post.post.slug}`}
             className="text-purple-600 hover:text-purple-800 flex flex-row items-center mt-8"
           >
             <FiChevronsLeft className="w-6 h-6" /> Back to All Articles
@@ -123,27 +130,23 @@ const BlogPost = async ({ params: { slug } }: BlogPostProps) => {
           <div className="container mx-auto my-12 border-2 border-purple-600 p-4 rounded-lg">
             <h2 className="text-2xl font-bold mb-4">Related Articles</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {post?.categoryArticles?.map((categoryArticle) => (
-                <ClientSideRoute
-                  key={categoryArticle._id}
-                  route={`/blog/${post.slug?.current}/${categoryArticle.slug}`}
-                >
-                  <div className="flex flex-row items-center" key={post.id}>
-                    <div className="relative rounded-full flex items-center w-12 h-12 overflow-hidden border">
-                      <Image
-                        src={
-                          (categoryArticle?.mainImage &&
-                            urlFor(categoryArticle?.mainImage).url()) ||
-                          placeholder
-                        }
-                        fill
-                        className="object-cover object-center"
-                        alt={categoryArticle?.author?.name}
-                      />
-                    </div>
-                    <p className="ml-2">{categoryArticle.title}</p>
+              {post?.categoryArticles?.map((categoryArticle: Post) => (
+                <div className="flex flex-row items-center" key={post.id}>
+                  <p>{`/blog/${post.slug?.current}/${categoryArticle.slug}`}</p>
+                  <div className="relative rounded-full flex items-center w-12 h-12 overflow-hidden border">
+                    <Image
+                      src={
+                        (categoryArticle?.mainImage &&
+                          urlFor(categoryArticle?.mainImage).url()) ||
+                        placeholder
+                      }
+                      fill
+                      className="object-cover object-center"
+                      alt={categoryArticle?.author?.name}
+                    />
                   </div>
-                </ClientSideRoute>
+                  <p>{categoryArticle.title}</p>
+                </div>
               ))}
             </div>
           </div>

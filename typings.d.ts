@@ -12,6 +12,7 @@ interface Post extends Base {
   author: Author;
   slug: Slug;
   body: Block[];
+  post: Post;
   mainImage: Image;
   categories: Category[];
   description: string;

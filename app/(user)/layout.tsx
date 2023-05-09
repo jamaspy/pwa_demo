@@ -1,9 +1,9 @@
 import { Footer, Navbar } from "@/components";
-import { DM_Sans } from "@next/font/google";
+import { Space_Grotesk } from "@next/font/google";
 import classNames from "classnames";
-import "../globals.css";
 import React from "react";
-const inter = DM_Sans({
+import "../globals.css";
+const inter = Space_Grotesk({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
 });
@@ -15,11 +15,16 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <head ><title>HeyHubble</title></head>
+      <head>
+        <title>PWA Test App</title>
+        <link rel="manifest" href="/manifest.json" />
+        <link rel="apple-touch-icon" href="/icon.png"></link>
+        <meta name="theme-color" content="#fff" />
+      </head>
       <body
         className={classNames(
           inter.className,
-          "min-h-screen flex flex-col justify-between w-full bg-[#FEF9EF] "
+          "min-h-screen flex flex-col justify-between w-full bg-straw "
         )}
       >
         <Navbar />
