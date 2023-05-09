@@ -48,7 +48,6 @@ const BlogPost = async ({ params: { slug } }: BlogPostProps) => {
 
   return (
     <article className="px-4">
-      {/* <pre>{JSON.stringify(post, null, 2)}</pre> */}
       <section className="mb-12">
         <Image
           src={
@@ -123,7 +122,7 @@ const BlogPost = async ({ params: { slug } }: BlogPostProps) => {
           <div className="container mx-auto my-12 border-2 border-purple-600 p-4 rounded-lg">
             <h2 className="text-2xl font-bold mb-4">Related Articles</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-              {post?.categoryArticles?.map((categoryArticle) => (
+              {post?.categoryArticles?.map((categoryArticle: Post) => (
                 <ClientSideRoute
                   key={categoryArticle._id}
                   route={`/blog/${post.slug?.current}/${categoryArticle.slug}`}
