@@ -6,7 +6,7 @@ import { previewData } from "next/headers";
 import React from "react";
 import { ImSpinner2 } from "react-icons/im";
 
-// export const revalidate = 3600; // revalidate page every 60 seconds
+export const revalidate = 60; // revalidate page every 60 seconds
 
 const query = groq`
 *[_type == "post"]{
