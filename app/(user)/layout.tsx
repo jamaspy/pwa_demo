@@ -3,6 +3,8 @@ import { Space_Grotesk } from "@next/font/google";
 import classNames from "classnames";
 import React from "react";
 import "../globals.css";
+import type { ReactNode } from "react";
+import { RegisterPWA } from "../register-pwa";
 const inter = Space_Grotesk({
   subsets: ["latin"],
   weight: ["400", "500", "700"],
@@ -91,7 +93,10 @@ export default function RootLayout({
         )}
       >
         <Navbar />
-        <div className="flex-1 2xl:container 2xl:mx-auto">{children}</div>
+        <div className="flex-1 2xl:container 2xl:mx-auto">
+          <RegisterPWA />
+          {children}
+        </div>
         <Footer />
       </body>
     </html>
