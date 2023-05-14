@@ -42,7 +42,7 @@ const Blog = async () => {
   return (
     <div className="bg-[#FEF9EF] h-full">
       <div
-        className="w-full bg-purple-600 text-white"
+        className="mt-4 w-full bg-[#214E73] text-white"
         style={{ clipPath: "polygon(0 0%, 100% 0, 100% 80%, 0 100%)" }}
       >
         <div className="flex flex-col lg:items-center lg:justify-center h-full py-24 px-4">
@@ -57,17 +57,21 @@ const Blog = async () => {
       <div className="py-12 bg-[#FEF9EF] container mx-auto">
         <BlogList posts={posts} />
       </div>
-      <div className="w-full bg-[#53E6CC] text-slate-900">
-        <div className="flex flex-col items-center justify-center h-full py-12">
-          <h1 className="text-4xl font-bold mb-4">
+      <div className="w-full bg-[#214E73] text-slate-100">
+        <div className="w-full flex flex-col items-center justify-center h-full py-12">
+          <h1 className="text-4xl font-bold mb-4 text-center">
             Get started with HeyHubble
           </h1>
-          <p>
+          <p className="text-center">
             Whether you are an NDIS participant, or a service provider, our
             friendly team is happy to help you!
           </p>
-          <div className="flex flex-col md:flex-row mt-8">
-            <Button label="Get Started" variant="is-primary" className="mr-4" />
+          <div className="flex flex-col items-center justify-center md:flex-row mt-8">
+            <Button
+              label="Get Started"
+              variant="is-primary"
+              className="md:mr-4 mb-2"
+            />
             <Button label="Request a service" variant="is-primary" />
           </div>
         </div>

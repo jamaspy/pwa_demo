@@ -33,9 +33,10 @@ const BlogPost = ({ post }: { post: Post }) => {
             })} `}
           </p>
           <div className="flex flex-row flex-wrap mt-4">
-            {post.categories.map((category, index) => (
-              <Tag key={`${index}${category}`} tag={category} />
-            ))}
+            {post.categories &&
+              post.categories.map((category, index) => (
+                <Tag key={`${index}${category}`} tag={category} />
+              ))}
           </div>
         </div>
       </div>

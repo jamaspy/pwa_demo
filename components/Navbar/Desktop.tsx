@@ -13,7 +13,7 @@ const Desktop = () => {
         </div>
       </Link>
       <div className="flex flex-row text-tea-green w-full justify-center gap-8">
-        <Link href="/home">Home</Link>
+        <Link href="/">Home</Link>
         <Link href="/blog">Articles</Link>
         <Link href="/contact">Contact</Link>
       </div>

@@ -6,7 +6,7 @@ import React from "react";
 export const RichTextComponents = {
   types: {
     image: ({ value }: any) => (
-      <div className="relative w-full min-h-96 mx-auto">
+      <div className="relative float-left w-48 h-48 mx-auto mr-2">
         <Image src={urlFor(value).url()} alt="Blog Post Image" fill />
       </div>
     ),

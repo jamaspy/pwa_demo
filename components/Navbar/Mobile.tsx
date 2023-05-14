@@ -27,7 +27,9 @@ const Sidebar = () => {
   return (
     <div className="flex flex-row w-full lg:hidden items-center justify-between">
       <Link href="/">
-        <Image src={Logo} alt="heyhubble logo" width={100} />
+        <div className="w-12 h-12 border-2 rounded-full flex items-center justify-center border-tea-green shadow">
+          <p className="text-lg text-tea-green font-black">NMD</p>
+        </div>
       </Link>
       {showSidebar ? (
         <button
@@ -44,19 +46,15 @@ const Sidebar = () => {
       )}
 
       <div
-        className={`flex flex-col justify-center px-4 top-0 right-0 w-[20vw] bg-gradient-to-b from-purple-900 to-purple-600 text-white fixed h-full z-40 ease-in-out duration-300 ${
+        className={`flex flex-col justify-center px-4 top-0 right-0 w-[50%] bg-gradient-to-b from-[#004E5B] to-[#24383c] text-white fixed h-full z-40 ease-in-out duration-300 ${
           showSidebar ? "translate-x-0 " : "translate-x-full"
         }`}
       >
-        <ul>
-          <ListItemLink
-            href={"/home"}
-            label="Home"
-            closeMenu={setShowSidebar}
-          />
+        <ul className="text-xl">
+          <ListItemLink href={"/"} label="Home" closeMenu={setShowSidebar} />
           <ListItemLink
             href={"/blog"}
-            label="Blog"
+            label="Information"
             closeMenu={setShowSidebar}
           />
           <ListItemLink

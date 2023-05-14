@@ -11,9 +11,7 @@ export const Footer = () => {
         {/* SOCIAL */}
         <div className="flex flex-col items-center justify-center w-full mb-8">
           <Link href="/">
-            <p className="text-naples-yellow font-bold italic mb-2">
-              Clarkie inc.
-            </p>
+            <p className="text-naples-yellow font-bold italic mb-2">NMD Inc.</p>
           </Link>
           <div className="flex flex-row items-center justify-center w-full text-xl text-naples-yellow">
             <FaFacebook className="" />
