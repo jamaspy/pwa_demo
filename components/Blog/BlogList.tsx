@@ -11,9 +11,7 @@ type BlogListProps = {
 export const BlogList = ({ posts }: BlogListProps) => {
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
-      {posts.map((post) => (
-        <BlogPost key={post.title} post={post} />
-      ))}
+      {posts && posts?.map((post) => <BlogPost key={post.title} post={post} />)}
     </div>
   );
 };

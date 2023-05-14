@@ -78,7 +78,10 @@ const BlogPost = async ({ params: { slug } }: BlogPostProps) => {
           >
             <FiChevronsLeft className="w-6 h-6" /> Back to All Articles
           </Link>
-          <PortableText value={post?.body} components={RichTextComponents} />
+          <PortableText
+            value={post?.body as PortableTextBlock[] | PortableTextBlock}
+            components={RichTextComponents}
+          />
           <Link
             href="/blog"
             className="text-purple-600 hover:text-purple-800 flex flex-row items-center mt-8"
