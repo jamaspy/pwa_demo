@@ -81,14 +81,14 @@ const BlogPost = async ({ params: { categoryArticleSlug } }: BlogPostProps) => {
       <section>
         <div className="container mx-auto">
           <Link
-            href={`/blog/${post.post.slug}`}
+            href={`/blog/${post?.post?.slug}`}
             className="text-purple-600 hover:text-purple-800 flex flex-row items-center mb-8"
           >
             <FiChevronsLeft className="w-6 h-6" /> Back to All Articles
           </Link>
           <PortableText value={post?.body} components={RichTextComponents} />
           <Link
-            href={`/blog/${post.post.slug}`}
+            href={`/blog/${post?.post?.slug}`}
             className="text-purple-600 hover:text-purple-800 flex flex-row items-center mt-8"
           >
             <FiChevronsLeft className="w-6 h-6" /> Back to All Articles
@@ -145,7 +145,7 @@ const BlogPost = async ({ params: { categoryArticleSlug } }: BlogPostProps) => {
                       alt={categoryArticle?.author?.name}
                     />
                   </div>
-                  <p>{categoryArticle.title}</p>
+                  <p>{categoryArticle?.title}</p>
                 </div>
               ))}
             </div>

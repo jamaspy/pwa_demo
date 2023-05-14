@@ -160,7 +160,7 @@ export default function RootLayout({
       <body
         className={classNames(
           inter.className,
-          "min-h-screen flex flex-col justify-between w-full bg-straw "
+          "min-h-screen flex flex-col w-full bg-straw"
         )}
       >
         <Navbar />
