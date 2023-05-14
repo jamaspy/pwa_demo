@@ -1,14 +1,13 @@
-// import { Footer, Navbar } from "@/components";
-// import { Space_Grotesk } from "@next/font/google";
-// import classNames from "classnames";
-// import React from "react";
-// import "../globals.css";
-// import type { ReactNode } from "react";
-// import { RegisterPWA } from "../register-pwa";
-// const inter = Space_Grotesk({
-//   subsets: ["latin"],
-//   weight: ["400", "500", "700"],
-// });
+import { Footer, Navbar } from "@/components";
+import { Space_Grotesk } from "@next/font/google";
+import classNames from "classnames";
+import React from "react";
+import "../globals.css";
+
+const inter = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+});
 
 // export default function RootLayout({
 //   children,
@@ -154,8 +153,19 @@ export default function RootLayout({
         <head /> will contain the components returned by the nearest parent
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
-      <head />
-      <body className="min-h-[100svh]">{children}</body>
+      <head>
+        <link rel="manifest" href="/manifest.json" />
+      </head>
+
+      <body
+        className={classNames(
+          inter.className,
+          "min-h-screen flex flex-col justify-between w-full bg-straw "
+        )}
+      >
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
